@@ -7,16 +7,18 @@ namespace Lab_8_Get_to_know_your_classmates
     {
         static void Main(string[] args)
         {
+            List<string> nameList = new List<string> { "Dan", "Zack", "Evan", "Mitch", "Mallory" };
             bool cont = true;
             while (cont)
             {
+
                 Console.WriteLine("Please choose the corresponding number to the student you would like to learn more about:" + "\n" + "1. Dan" + "\n" + "2. Zack" + "\n" + "3. Evan" + "\n" + "4. Mitch" + "\n" + "5. Mallory");
                 string studentNum1 = Console.ReadLine();
                 int studentNum = 0;
                 try
                 {
                     studentNum = int.Parse(studentNum1);
-                    if (studentNum < 1 || studentNum > 5)
+                    if (studentNum < 1 || studentNum > nameList.Count-1)
                     {
                         Console.WriteLine("That was outside of the given range, let's try again.");
                         continue;
@@ -28,7 +30,7 @@ namespace Lab_8_Get_to_know_your_classmates
                     continue;
                 }
 
-                string studentName = ChooseStudent(studentNum - 1);
+                string studentName = ChooseStudent((studentNum - 1), nameList);
                 Console.WriteLine($"The student's name is {studentName}");
 
                 //asking to know favorite food
@@ -53,12 +55,42 @@ namespace Lab_8_Get_to_know_your_classmates
                 }
 
                 //asking to continue
-                cont = ChooseContinue();
+                //cont = ChooseContinue();
+                Console.WriteLine("Would you like to run this program again? Press 1 and enter");
+                Console.WriteLine("Would you also like to add another student to the list of names? Press 2 and enter");
+                Console.WriteLine("If you would like to end this program, press 3 and enter");
+                bool cont2 = true;
+                while (cont2)
+                {
+                    string uInput = Console.ReadLine();
+                    if (uInput == "1")
+                    {
+                        cont2 = false;
+                    }
+                    else if (uInput == "2")
+                    {
+                        Console.WriteLine("What name would you like to add?");
+                        string newName = Console.ReadLine();
+                        nameList.Add(newName);
+                        cont2 = false;
+                    }
+                    else if (uInput == "3")
+                    {
+                        Console.WriteLine("Goodbye.");
+                        cont = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input, please give a number between 1 and 3.");
+                        continue;
+                    }
+                }
+
             }
         }
-        public static string ChooseStudent(int studentNum)
+        public static string ChooseStudent(int studentNum, List<string> nameList)
         {
-            List<string> nameList = new List<string> { "Dan", "Zack", "Evan", "Mitch", "Mallory" };
+            //List<string> nameList = new List<string> { "Dan", "Zack", "Evan", "Mitch", "Mallory" };
             bool cont = true;
             string studentName = "";
             while (cont)
