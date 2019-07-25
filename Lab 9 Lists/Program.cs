@@ -8,17 +8,20 @@ namespace Lab_8_Get_to_know_your_classmates
         static void Main(string[] args)
         {
             List<string> nameList = new List<string> { "Dan", "Zack", "Evan", "Mitch", "Mallory" };
+            List<string> foodList = new List<string> { "hot dog", "cheeseburger", "milkshake", "curry", "tacos" };
+            List<string> hometownList = new List<string> { "Detroit", "Chicago", "Boston", "Los Angeles", "Seattle" };
+            List<string> drinkList = new List<string> { "Coke", "Pepsi", "Sprite", "Jeager", "Red-Bull" };
             bool cont = true;
             while (cont)
             {
 
-                Console.WriteLine("Please choose the corresponding number to the student you would like to learn more about:" + "\n" + "1. Dan" + "\n" + "2. Zack" + "\n" + "3. Evan" + "\n" + "4. Mitch" + "\n" + "5. Mallory");
+                Console.WriteLine("\nPlease choose the corresponding number to the student you would like to learn more about:" + "\n" + "1. Dan" + "\n" + "2. Zack" + "\n" + "3. Evan" + "\n" + "4. Mitch" + "\n" + "5. Mallory");
                 string studentNum1 = Console.ReadLine();
                 int studentNum = 0;
                 try
                 {
                     studentNum = int.Parse(studentNum1);
-                    if (studentNum < 1 || studentNum > nameList.Count-1)
+                    if (studentNum < 1 || studentNum > nameList.Count)
                     {
                         Console.WriteLine("That was outside of the given range, let's try again.");
                         continue;
@@ -34,21 +37,21 @@ namespace Lab_8_Get_to_know_your_classmates
                 Console.WriteLine($"The student's name is {studentName}");
 
                 //asking to know favorite food
-                string studentFood = ChooseFood($"Would you like to know {studentName}'s favorite food?", (studentNum - 1));
+                string studentFood = ChooseFood($"Would you like to know {studentName}'s favorite food?", (studentNum - 1), foodList);
                 if (studentFood != "")
                 {
                     Console.WriteLine($"{studentName}'s favorite food is {studentFood}.");
                 }
 
                 //asking to know hometown
-                string studentHometown = ChooseHometown($"Would you like to know which town {studentName} grew up in?", (studentNum - 1));
+                string studentHometown = ChooseHometown($"Would you like to know which town {studentName} grew up in?", (studentNum - 1), hometownList);
                 if (studentHometown != "")
                 {
                     Console.WriteLine($"{studentName}'s hometown is {studentHometown}.");
                 }
 
                 //asking to know favorite drink
-                string studentDrink = ChooseDrink($"Would you like to know {studentName}'s favorite drink?", (studentNum - 1));
+                string studentDrink = ChooseDrink($"Would you like to know {studentName}'s favorite drink?", (studentNum - 1), drinkList);
                 if (studentDrink != "")
                 {
                     Console.WriteLine($"{studentName}'s favorite drink is {studentDrink}.");
@@ -72,12 +75,18 @@ namespace Lab_8_Get_to_know_your_classmates
                         Console.WriteLine("What name would you like to add?");
                         string newName = Console.ReadLine();
                         nameList.Add(newName);
+                        foodList.Add("Ice Cream");
+                        hometownList.Add("Toledo");
+                        drinkList.Add("water");
+                        Console.WriteLine($"\nThere are now {nameList.Count - 5} hidden name option(s) that are available to choose from, please choose {nameList.Count} for the newest addition to the list.");
                         cont2 = false;
                     }
                     else if (uInput == "3")
                     {
                         Console.WriteLine("Goodbye.");
+                        cont2 = false;
                         cont = false;
+
                     }
                     else
                     {
@@ -90,7 +99,6 @@ namespace Lab_8_Get_to_know_your_classmates
         }
         public static string ChooseStudent(int studentNum, List<string> nameList)
         {
-            //List<string> nameList = new List<string> { "Dan", "Zack", "Evan", "Mitch", "Mallory" };
             bool cont = true;
             string studentName = "";
             while (cont)
@@ -109,10 +117,9 @@ namespace Lab_8_Get_to_know_your_classmates
             return studentName;
 
         }
-        public static string ChooseFood(string message, int studentNum)
+        public static string ChooseFood(string message, int studentNum, List<string>foodList)
         {
             Console.WriteLine(message);
-            List<string> foodList = new List<string> { "hot dog", "cheeseburger", "milkshake", "curry", "tacos" };
             string foodChoice = "";
             bool cont = true;
             while (cont)
@@ -135,10 +142,9 @@ namespace Lab_8_Get_to_know_your_classmates
             }
             return foodChoice;
         }
-        public static string ChooseHometown(string message, int studentNum)
+        public static string ChooseHometown(string message, int studentNum, List<string> hometownList)
         {
             Console.WriteLine(message);
-            List<string> hometownList = new List<string> { "Detroit", "Chicago", "Boston", "Los Angeles", "Seattle" };
             string hometown = "";
             bool cont = true;
             while (cont)
@@ -161,10 +167,9 @@ namespace Lab_8_Get_to_know_your_classmates
             }
             return hometown;
         }
-        public static string ChooseDrink(string message, int studentNum)
+        public static string ChooseDrink(string message, int studentNum, List<string> drinkList)
         {
             Console.WriteLine(message);
-            List<string> drinkList = new List<string> { "Coke", "Pepsi", "Sprite", "Jeager", "Red-Bull" };
             string drink = "";
             bool cont = true;
             while (cont)
