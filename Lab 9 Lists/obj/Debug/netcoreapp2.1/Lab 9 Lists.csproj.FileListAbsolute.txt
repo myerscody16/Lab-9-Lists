@@ -1,0 +1,11 @@
+C:\Users\Cody's PC\Desktop\Lab-9-Lists\Lab 9 Lists\bin\Debug\netcoreapp2.1\Lab 9 Lists.deps.json
+C:\Users\Cody's PC\Desktop\Lab-9-Lists\Lab 9 Lists\bin\Debug\netcoreapp2.1\Lab 9 Lists.runtimeconfig.json
+C:\Users\Cody's PC\Desktop\Lab-9-Lists\Lab 9 Lists\bin\Debug\netcoreapp2.1\Lab 9 Lists.runtimeconfig.dev.json
+C:\Users\Cody's PC\Desktop\Lab-9-Lists\Lab 9 Lists\bin\Debug\netcoreapp2.1\Lab 9 Lists.dll
+C:\Users\Cody's PC\Desktop\Lab-9-Lists\Lab 9 Lists\bin\Debug\netcoreapp2.1\Lab 9 Lists.pdb
+C:\Users\Cody's PC\Desktop\Lab-9-Lists\Lab 9 Lists\obj\Debug\netcoreapp2.1\Lab 9 Lists.csprojAssemblyReference.cache
+C:\Users\Cody's PC\Desktop\Lab-9-Lists\Lab 9 Lists\obj\Debug\netcoreapp2.1\Lab 9 Lists.csproj.CoreCompileInputs.cache
+C:\Users\Cody's PC\Desktop\Lab-9-Lists\Lab 9 Lists\obj\Debug\netcoreapp2.1\Lab 9 Lists.AssemblyInfoInputs.cache
+C:\Users\Cody's PC\Desktop\Lab-9-Lists\Lab 9 Lists\obj\Debug\netcoreapp2.1\Lab 9 Lists.AssemblyInfo.cs
+C:\Users\Cody's PC\Desktop\Lab-9-Lists\Lab 9 Lists\obj\Debug\netcoreapp2.1\Lab 9 Lists.dll
+C:\Users\Cody's PC\Desktop\Lab-9-Lists\Lab 9 Lists\obj\Debug\netcoreapp2.1\Lab 9 Lists.pdb
