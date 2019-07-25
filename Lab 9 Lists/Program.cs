@@ -72,14 +72,27 @@ namespace Lab_8_Get_to_know_your_classmates
                     }
                     else if (uInput == "2")
                     {
-                        Console.WriteLine("What name would you like to add?");
-                        string newName = Console.ReadLine();
-                        nameList.Add(newName);
-                        foodList.Add("Ice Cream");
-                        hometownList.Add("Toledo");
-                        drinkList.Add("water");
-                        Console.WriteLine($"\nThere are now {nameList.Count - 5} hidden name option(s) that are available to choose from, please choose {nameList.Count} for the newest addition to the list.");
-                        cont2 = false;
+                        bool cont3 = true;
+                        while (cont3)
+                        {
+                            Console.WriteLine("What name would you like to add?");
+                            string newName = Console.ReadLine();
+                            if (newName != "")
+                            {
+                                nameList.Add(newName);
+                                foodList.Add("Ice Cream");
+                                hometownList.Add("Toledo");
+                                drinkList.Add("water");
+                                Console.WriteLine($"\nThere are now {nameList.Count - 5} hidden name option(s) that are available to choose from, please choose {nameList.Count} for the newest addition to the list.");
+                                cont2 = false;
+                                cont3 = false;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Please type a name.");
+                                continue;
+                            }
+                        }
                     }
                     else if (uInput == "3")
                     {
